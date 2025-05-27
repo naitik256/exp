@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Stopwatch</title>
+  <meta name="description" content="Track your study time automatically using body posture. BlazePose and FaceMesh detect if you're truly focused." />
+  <meta name="keywords" content="study stopwatch, productivity tracker, posture detection, AI study, blaze pose, face mesh" />
+  <meta name="author" content="Naitik Raj" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- MediaPipe Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5/pose.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@0.4/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Study Stopwatch</h1>
+    <div id="stopwatch">00:00:00</div>
+    <div class="controls">
+      <button id="reset">Reset</button>
+    </div>
+    <div id="status">Loading...</div>
+    <div class="report">
+      <h3>Daily Report</h3>
+      <ul id="daily-report"></ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <a href="#about">About</a> |
+      <a href="#privacy">Privacy Policy</a> |
+      <a href="mailto:rajnaitik620@gmail.com">Contact</a> |
+      <a href="https://www.instagram.com/itz_raj_0990_?igsh=bTl6NmgzOGI3OWQy" target="_blank">Instagram</a>
+    </p>
+  </footer>
+
+  <div id="about" class="info-section">
+    <h3>About</h3>
+    <p>This app uses BlazePose and FaceMesh to detect your writing posture and face direction in real-time. The timer runs only when you are actively focused on studying.</p>
+  </div>
+
+  <!-- ✅ Important Guidelines Block -->
+  <div class="info-section" style="background-color: #222; border-left: 4px solid #00cec9; padding: 15px; margin-top: 20px;">
+    <h3 style="color: #00cec9;">⚠️ Important Study Guidelines</h3>
+    <ul style="text-align: left; font-size: 0.95em; line-height: 1.6;">
+      <li><strong>1.</strong> Please make sure your <strong>face and both hands</strong> are fully visible in the camera frame for accurate detection.</li>
+      <li><strong>2.</strong> Maintain at least <strong>25 cm (10 inches)</strong> distance from your copy or book. This helps both with detection and protects your <strong>eye health</strong>.</li>
+      <li><strong>3.</strong> Keep your <strong>phone or screen 40–50 cm</strong> from your face to reduce strain and avoid misdetection.</li>
+    </ul>
+  </div>
+
+  <div id="privacy" class="info-section">
+    <h3>Privacy Policy</h3>
+    <p>This app runs entirely in your browser. Your camera feed is never stored or sent anywhere. All posture detection happens locally, and your daily study time is saved securely in your browser's localStorage.</p>
+  </div>
+</body>
+</html>
